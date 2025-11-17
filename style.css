@@ -1,0 +1,488 @@
+/* Variables de color */
+:root {
+    --color-fondo: #212121; /* Negro Grafito */
+    --color-banner-bg: #800000; /* Rojo Colonial (un borgoña oscuro similar) */
+    --color-dorado-filo: #D4AF37; /* Dorado */
+    --color-texto-claro: #E0E0E0;
+    --color-texto-oscuro: #333;
+    --color-enlace: #FFD700; /* Dorado para enlaces */
+    --color-enlace-hover: #FFFACD;
+}
+
+/* Estilos Generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto-claro);
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* Encabezado */
+header {
+    background-color: var(--color-fondo);
+    color: var(--color-texto-claro);
+    padding: 20px 0;
+    border-bottom: 2px solid var(--color-dorado-filo);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2%;
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: var(--color-dorado-filo);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+header .logo img {
+    margin: 2%;
+    width: 600px;
+    height: 100px;
+    object-fit: cover;
+    
+    }
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 25px;
+}
+
+nav a {
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 8px 15px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--color-dorado-filo);
+    border-color: var(--color-dorado-filo);
+    background-color: rgba(255, 215, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Banners */
+.banner {
+    background-color: var(--color-banner-bg);
+    color: var(--color-texto-claro);
+    padding: 40px 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    border: 3px solid var(--color-dorado-filo); /* Filos dorados */
+    border-radius: 8px;
+    margin: 20px 5%;
+}
+
+.banner h2 {
+    margin: 0;
+    font-size: 3em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    color: var(--color-dorado-filo);
+}
+
+/* Secciones de contenido */
+main {
+    padding: 20px 5%;
+    min-height: calc(100vh - 200px); /* Ajusta según la altura del header y footer */
+}
+
+.content-section {
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente sobre el grafito */
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-left: 5px solid var(--color-dorado-filo);
+}
+
+.content-section h2, .content-section h3 {
+    color: var(--color-dorado-filo);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* Botones */
+.button {
+    display: inline-block;
+    background-color: var(--color-banner-bg);
+    color: var(--color-dorado-filo);
+    padding: 12px 25px;
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    border: 2px solid var(--color-dorado-filo);
+}
+
+.button:hover {
+    background-color: var(--color-dorado-filo);
+    color: var(--color-banner-bg);
+    border-color: var(--color-banner-bg);
+}
+
+/* Galería de imágenes (Ejemplo para la página de inicio) */
+.image-gallery {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.image-gallery h3 {
+    color: var(--color-dorado-filo);
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.gallery-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.image-gallery img {
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border: 3px solid var(--color-dorado-filo);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Productos (ejemplo de estilo para la página de productos) */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.product-card {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--color-dorado-filo);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 20px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-bottom: 2px solid var(--color-dorado-filo);
+}
+
+.product-card h3 {
+    color: var(--color-dorado-filo);
+    margin: 15px 0 10px;
+    font-size: 1.5em;
+}
+
+.product-card p {
+    padding: 0 15px;
+    font-size: 0.95em;
+    color: var(--color-texto-claro);
+}
+
+.product-card .price {
+    font-size: 1.3em;
+    color: var(--color-enlace);
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Formularios (ejemplo para Contacto) */
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--color-dorado-filo);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--color-dorado-filo);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--color-texto-claro);
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-enlace-hover);
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form button[type="submit"] {
+    background-color: var(--color-banner-bg);
+    color: var(--color-dorado-filo);
+    padding: 12px 25px;
+    border: 2px solid var(--color-dorado-filo);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: var(--color-dorado-filo);
+    color: var(--color-banner-bg);
+}
+
+
+/* Pie de página */
+footer {
+    background-color: var(--color-fondo);
+    color: var(--color-texto-claro);
+    text-align: center;
+    padding: 20px 0;
+    border-top: 2px solid var(--color-dorado-filo);
+    margin-top: 30px;
+}
+
+/* Estilos específicos para cada página (secciones dentro del main) */
+/* Puedes copiar y pegar la estructura de main para cada página */
+/* Ejemplo de productos.html */
+/*
+<main class="products-page">
+    <div class="banner">
+        <h2>Nuestras Creaciones</h2>
+    </div>
+    <section class="content-section">
+        <h3>Guitarras Eléctricas</h3>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/350x200/581845/FFFFFF?text=Guitarra+Clásica" alt="Guitarra Clásica">
+                <h3>Modelo Clásico E-100</h3>
+                <p>Una guitarra eléctrica con alma vintage y sonido potente.</p>
+                <p class="price">$1500</p>
+                <a href="#" class="button">Ver Detalles</a>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/350x200/581845/FFFFFF?text=Guitarra+Acústica" alt="Guitarra Acústica">
+                <h3>Acústica Sonora A-200</h3>
+                <p>Cuerpo de caoba, sonido cálido y resonante.</p>
+                <p class="price">$1200</p>
+                <a href="#" class="button">Ver Detalles</a>
+            </div>
+             <div class="product-card">
+                <img src="https://via.placeholder.com/350x200/581845/FFFFFF?text=Guitarra+Clásica" alt="Guitarra Clásica">
+                <h3>Modelo Clásico E-100</h3>
+                <p>Una guitarra eléctrica con alma vintage y sonido potente.</p>
+                <p class="price">$1500</p>
+                <a href="#" class="button">Ver Detalles</a>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/350x200/581845/FFFFFF?text=Guitarra+Acústica" alt="Guitarra Acústica">
+                <h3>Acústica Sonora A-200</h3>
+                <p>Cuerpo de caoba, sonido cálido y resonante.</p>
+                <p class="price">$1200</p>
+                <a href="#" class="button">Ver Detalles</a>
+            </div>
+        </div>
+    </section>
+</main>
+*/
+/* Puedes crear archivos HTML separados (productos.html, informacion.html, etc.) y reutilizar estos estilos CSS. */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    header .logo h1 {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    nav a {
+        padding: 5px 10px;
+        font-size: 1em;
+    }
+
+    .banner h2 {
+        font-size: 2em;
+    }
+
+    .gallery-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-gallery img {
+        max-width: 90%;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* CSS Específico para el detalle del producto */
+.product-detail-container {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.gallery-main {
+    flex: 1;
+    min-width: 400px;
+    text-align: center;
+}
+
+.gallery-main img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border: 3px solid var(--color-dorado-filo);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.specs-info {
+    flex: 1;
+}
+
+.specs-info h1 {
+    color: var(--color-dorado-filo);
+    font-size: 2.5em;
+    margin-top: 0;
+    border-bottom: 2px solid var(--color-banner-bg);
+    padding-bottom: 10px;
+}
+
+.specs-info .price-tag {
+    font-size: 2em;
+    color: var(--color-enlace);
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: rgba(128, 0, 0, 0.4); /* Rojo semi-transparente */
+    border-radius: 5px;
+}
+
+.specs-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.specs-list li {
+    padding: 8px 0;
+    border-bottom: 1px dashed rgba(212, 175, 55, 0.3);
+}
+
+.specs-list strong {
+    color: var(--color-dorado-filo);
+    display: inline-block;
+    width: 150px; /* Alineación de las descripciones */
+}
+
+.specs-list span {
+    color: var(--color-texto-claro);
+}
+
+.description-section {
+    margin-top: 40px;
+}
+
+/* Adaptación Responsiva */
+@media (max-width: 900px) {
+    .product-detail-container {
+        flex-direction: column;
+    }
+    .gallery-main, .specs-info {
+        min-width: 100%;
+    }
+    .specs-info h1 {
+        text-align: center;
+    }
+    .specs-list strong {
+        width: 120px;
+    }
+}
+
+/* Estilos para Enlaces de Redes Sociales */
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: var(--color-dorado-filo);
+    font-size: 1.8em; /* Tamaño de los íconos */
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--color-enlace-hover); /* Dorado más claro al pasar el ratón */
+}
+
+/* Ajuste del footer para centrar el nuevo contenido */
+footer {
+    /* ... (otros estilos de footer) ... */
+    display: flex; /* Asegura que los elementos dentro puedan alinearse */
+    flex-direction: column; /* Apila el texto y los íconos */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center;
+}
