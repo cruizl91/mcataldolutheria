@@ -38,12 +38,20 @@ header {
     padding: 0 2%;
 }
 
-header .logo h1 {
-    margin: 0;
-    font-size: 2.5em;
-    color: var(--color-dorado-filo);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+header .logo img {
+    /* Define un tamaño máximo para el logo para que no sea demasiado grande en PC */
+    max-width: 300px; 
+    height: auto;
+    display: block;
+}
+
+/* Ajuste opcional para móviles: */
+@media (max-width: 768px) {
+    header .logo img {
+        /* Reduce el tamaño del logo en pantallas pequeñas */
+        max-width: 150px; 
     }
+}
 
 /* --- ESTILOS PARA EL MENÚ HAMBURGUESA --- */
 
