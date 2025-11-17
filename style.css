@@ -49,7 +49,7 @@ header .logo img {
 @media (max-width: 768px) {
     header .logo img {
         /* Reduce el tamaño del logo en pantallas pequeñas */
-        max-width: 150px; 
+        max-width: 300px; 
     }
 }
 
