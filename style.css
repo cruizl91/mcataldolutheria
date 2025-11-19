@@ -33,9 +33,9 @@ header {
     padding: 20px 0;
     border-bottom: 2px solid var(--color-dorado-filo);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Separa logo y menú en escritorio */
     align-items: center;
-    padding: 0 2%;
+    padding: 0 5%; /* Ajustado el padding para mejor visualización */
 }
 
  header .logo img {
@@ -49,7 +49,7 @@ header {
 @media (max-width: 900px) {
     header .logo img {
         /* Reduce el tamaño del logo en pantallas pequeñas */
-        max-width: 300px; 
+        max-width: 250px; 
     }
 }
 
@@ -60,14 +60,17 @@ header {
     display: none;
 }
 
-/* Estilo para el ícono de hamburguesa (visible solo en móvil) */
+/* Estilo para el ícono de hamburguesa */
 .menu-icon {
-    display: none;
+    display: none; /* Oculto por defecto en escritorio */
     cursor: pointer;
     font-size: 1.8em;
     color: var(--color-dorado-filo);
-    padding: 20px 60px;
+    /* Ajuste de padding para hacerlo más ancho (horizontal) */
+    padding: 15px 25px; 
     transition: color 0.3s ease;
+    /* Necesario para posicionar correctamente en móvil */
+    order: 1; 
 }
 
 .menu-icon:hover {
@@ -75,16 +78,13 @@ header {
 }
 
 /* Lista de enlaces (horizontal por defecto en PC) */
-nav .nav-links {
-    margin: 0;
-    padding: 0;
+/* CLAVE: Selecciona directamente el UL con la clase .nav-links */
+.nav-links {
     list-style: none;
     display: flex; /* Muestra horizontalmente en escritorio */
-    gap: 25px;
-}
-
-nav .nav-links li {
-    display: inline-block;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
 }
 
 nav a {
@@ -108,50 +108,72 @@ nav a.active {
 /* --- MEDIA QUERY: TRANSICIÓN A DESPLEGABLE EN MÓVIL --- */
 
 @media (max-width: 768px) {
-    /* 1. Hace visible el ícono de hamburguesa */
-    .menu-icon {
-        display: block;
-        order: 1; /* Asegura que el ícono esté a la derecha del logo si el header es flex */
+    /* 1. Ajuste del Header: Asegura que el logo y el ícono estén en la misma fila y separados */
+    header {
+        flex-direction: row; 
+        justify-content: space-between; /* Separa logo y menú */
+        align-items: center;
+        padding: 10px 5%; /* Ajuste de padding para el móvil */
     }
 
-    /* 2. Oculta la lista por defecto */
-    nav .nav-links {
+    /* 2. Hace visible y posiciona el ícono de hamburguesa */
+    .menu-icon {
+        display:block;
+        /* El order: 1 está definido arriba, lo coloca a la derecha */
+    }
+
+    /* 3. Oculta la lista en móvil y la prepara para el despliegue */
+    .nav-links { /* Selector corregido */
         display: none; 
         flex-direction: column; /* Cambia a lista vertical */
         width: 100%;
-        background-color: #333; /* Fondo para el menú desplegado */
+        background-color: #333; 
         position: absolute;
-        top: 80px; /* Colócalo debajo del header */
+        top: 80px; /* Ajusta este valor si tu header es más alto */
         left: 0;
         z-index: 1000;
         border-bottom: 2px solid var(--color-dorado-filo);
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
     }
     
-    nav .nav-links li {
+    /* 4. Muestra la lista cuando se activa el checkbox */
+    #menu-toggle:checked + .menu-icon + .nav-links {
+        display: flex; /* Muestra el UL completo */
+    }
+    
+/* Estilos de los elementos de la lista desplegada */
+    .nav-links li {
         width: 100%;
         text-align: center;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* 3. Muestra la lista cuando se activa el checkbox */
-    #menu-toggle:checked + .menu-icon + .nav-links {
-        display: flex;
+    nav a {
+        display: block; 
+        padding: 15px; 
+        border-radius: 0;
     }
-    
+
+    nav a:hover {
+        background-color: rgba(0, 0, 0, 0.2); 
+        transform: none;
+    }
+
+
     /* Ajuste para que el header se vea mejor en móvil */
     header {
         flex-direction: row; /* Vuelve a poner el logo y el ícono en una fila */
-        justify-content: space-between;
+       justify-content: space-between;
         align-items: center;
         padding: 0 5%; /* Añade padding para que no se peguen a los bordes */
     }
     
-    header .logo {
+   header .logo {
         /* Orden: 0 asegura que el logo (o la imagen) siempre esté a la izquierda */
-        order: 0; 
+       order: 0; 
         
     }
+
 }
 
 
